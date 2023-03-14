@@ -10,18 +10,24 @@ clusterGroup:
 
   namespaces:
     - config-demo
-
+    - golang-external-secrets
   subscriptions:
 
   projects:
     - config-demo
-
+    - golang-external-secrets
   applications:
     config-demo:
       name: config-demo
       namespace: config-demo
       project: config-demo
       path: charts/all/config-demo
+
+    golang-external-secrets:
+      name: golang-external-secrets
+      namespace: golang-external-secrets
+      project: golang-external-secrets
+      path: common/golang-external-secrets
 
   # imperative:
   #   # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
